@@ -15,15 +15,30 @@ que tiene que tener el tablero por lado. -->
 </head>
 
 <body>
+    <div>
+        <label for="num-input">Cuantas casillas quieres?</label>
+        <input type="number" id="num-input">
+    </div>
 
+    <div>
+        <label for="tamano-input">Cuantos pixeles por lado?</label>
+        <input type="number" id="tamano-input">
+    </div>
+    <button id="crear-tablero-btn">Crear Tablero</button>
     <section id="tablero"></section>
 
     <script>
+
         const tablero = document.querySelector('#tablero');
+        const numInput = document.querySelector('#num-input');
+        const tamanoInput = document.querySelector('#tamano-input');
+        const crearTableroBtn = document.querySelector('#crear-tablero-btn');
 
-
-        const num = parseInt(prompt('Cuantas casillas quieres?'));
-        const tamano = parseInt(prompt('Cuantos pixeles por lado?'));
+        crearTableroBtn.addEventListener('click', function () {
+            const num = parseInt(numInput.value);
+            const tamano = parseInt(tamanoInput.value);
+            printTablero(num, tamano, tablero);
+        });
 
         function empiezaPintarNegras(pDom, pNum, pTamano) {
             for (let j = 0; j < pNum; j++) {
@@ -75,7 +90,6 @@ que tiene que tener el tablero por lado. -->
                 }
             };
         };
-        printTablero(num, tamano, tablero);
 
 
 
