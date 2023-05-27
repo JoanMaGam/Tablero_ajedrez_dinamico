@@ -9,3 +9,5 @@ el ancho de las casillas y la cantidad de casillas que tiene que tener el tabler
 Deploy: https://joanmagam.github.io/Tablero_ajedrez_dinamico/
 
 Vista previa:
+![image](https://github.com/JoanMaGam/Tablero_ajedrez_dinamico/assets/122151033/c46ad037-2454-432c-97c5-f682f882c52b)
+
