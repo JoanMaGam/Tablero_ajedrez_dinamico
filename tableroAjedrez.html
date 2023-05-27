@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--   ( C O N D I C I Ó N :   R E S O LV E R   E N C A P S U L A N D O   E N   
+F U N C I O N E S )  
+Hacer un programa que me permita crear un tablero de ajedrez dinámico, donde 
+pueda elegir, pidiéndolo por pantalla, el ancho de las casillas y la cantidad de casillas 
+que tiene que tener el tablero por lado. -->
+</head>
+
+<body>
+
+    <section id="tablero"></section>
+
+    <script>
+        const tablero = document.querySelector('#tablero');
+
+
+        const num = parseInt(prompt('Cuantas casillas quieres?'));
+        const tamano = parseInt(prompt('Cuantos pixeles por lado?'));
+
+        function empiezaPintarNegras(pDom, pNum, pTamano) {
+            for (let j = 0; j < pNum; j++) {
+                const p = document.createElement('p');
+                p.style.width = `${pTamano}px`;
+                p.style.height = `${pTamano}px`;
+
+                if (j % 2 !== 0) {
+                    p.style.backgroundColor = 'whitesmoke';
+                } else {
+                    p.style.backgroundColor = '#333';
+                }
+                pDom.appendChild(p)
+                console.log(pDom);
+            }
+            return pDom
+        }
+
+        function empiezaPintarBlancas(pDom, pNum, pTamano) {
+            for (let j = 0; j < pNum; j++) {
+                const p = document.createElement('p');
+                p.style.width = `${pTamano}px`;
+                p.style.height = `${pTamano}px`;
+
+                if (j % 2 === 0) {
+                    p.style.backgroundColor = 'whitesmoke';
+                } else {
+                    p.style.backgroundColor = '#333';
+                }
+                pDom.appendChild(p)
+                console.log(pDom);
+            }
+            return pDom
+        }
+
+
+        function printTablero(pNum, pTamano, pDom) {
+            tablero.innerHTML = '';
+
+            for (let i = 0; i < pNum; i++) {
+                let pp = document.createElement('p')
+                pp.style.display = 'flex'
+                pDom.appendChild(pp)
+
+                if (i % 2 === 0) {
+                    empiezaPintarBlancas(pp, pNum, pTamano)
+                } else {
+                    empiezaPintarNegras(pp, pNum, pTamano)
+                }
+            };
+        };
+        printTablero(num, tamano, tablero);
+
+
+
+
+    </script>
+</body>
+
+</html>
